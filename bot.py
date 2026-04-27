@@ -12,7 +12,8 @@ bot = telebot.TeleBot(TOKEN)
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
     markup = InlineKeyboardMarkup()
-    wat_button = InlineKeyboardButton("📝 Try WAT Practice", callback_data="wat_practice")
+    # Removed the emoji from the button
+    wat_button = InlineKeyboardButton("Try WAT Practice", callback_data="wat_practice")
     markup.add(wat_button)
     
     bot.send_message(
@@ -33,9 +34,10 @@ def handle_wat_practice(call):
 # --- Step 3: The Upsell ---
 @bot.message_handler(func=lambda message: True)
 def handle_text(message):
+    # Removed the checkmark and link emojis, and added the infinite loop text
     bot.send_message(
         message.chat.id,
-        "✅ Sentence recorded!\n\nTo get detailed AI analysis on your psychological profile, track your progress, and access full TAT/SRT tests, download the official AI SSB app below:\n\n🔗 https://play.google.com/store/apps/details?id=com.newpromax.bookandpen29349&hl=en_IN"
+        "Sentence recorded!\n\nGood attempt. In the real SSB, you only have 15 seconds per word!\n\nTo get instant AI analysis on your sentence, track your psychology profile, and practice full TAT/SRT sets, download the official app:\nhttps://play.google.com/store/apps/details?id=com.newpromax.bookandpen29349&hl=en_IN\n\n(Or tap /start to practice another word)."
     )
 
 # --- Dummy Web Server for Render ---
