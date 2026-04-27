@@ -35,7 +35,7 @@ def handle_wat_practice(call):
 def handle_text(message):
     bot.send_message(
         message.chat.id,
-        "✅ Sentence recorded!\n\nTo get detailed AI analysis on your psychological profile, track your progress, and access full TAT/SRT tests, download the official AI SSB app below:\n\n🔗 [INSERT YOUR GOOGLE PLAY STORE LINK HERE]"
+        "✅ Sentence recorded!\n\nTo get detailed AI analysis on your psychological profile, track your progress, and access full TAT/SRT tests, download the official AI SSB app below:\n\n🔗 https://play.google.com/store/apps/details?id=com.newpromax.bookandpen29349&hl=en_IN"
     )
 
 # --- Dummy Web Server for Render ---
